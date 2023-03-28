@@ -8,10 +8,10 @@ option = st.selectbox(
     'Posição Procurada',
     (
         'Atacante', 
-        'Goleiros', 
+        'Goleiro', 
         'Meiocampista', 
-        'Laterais', 
-        'Zagueiros'
+        'Lateral', 
+        'Zagueiro'
     )
 )
 
@@ -21,6 +21,6 @@ df = df[df['ano']==22]
 
 df['value_diff'] = df['previsto'] - df['value_eur']
 
-# df = df[df['posicao']==option]
+df = df[df['posicao']==option.lower()]
 
 st.table(data=df.head(10))
